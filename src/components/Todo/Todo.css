@@ -1,0 +1,40 @@
+.li-todo {
+   border: 1px black solid;
+   width: 300px;
+   margin-left: -20px;
+   border-radius: 0.3em;
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.span-todo-done {
+   text-decoration: line-through;
+}
+
+.span-todo {
+   margin-left: 10px;
+}
+
+.button-todo-delete {
+   display: inline-block;
+   border: 2px solid rgb(192, 14, 14);
+   margin: 10px;
+   width: 40px;
+   height: 20px;
+   border-radius: 1em;
+}
+
+.button-todo-edit {
+   display: inline-block;
+   border: 2px solid rgb(14, 192, 124);
+   margin: 10px;
+   width: 40px;
+   height: 20px;
+   border-radius: 1em;
+   margin-left: 10vw;
+}
+
+.input-edit {
+   width: 50px;
+}
