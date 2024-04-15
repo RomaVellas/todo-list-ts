@@ -1,5 +1,4 @@
 import React, { Dispatch, FC, useState } from 'react';
-import Input from '../Input/Input';
 import { ITodos } from '../TodoList/TodoList';
 import './Form.css';
 
@@ -23,7 +22,11 @@ const Form: FC<FormProps> = ({todos, setTodos}) => {
 
    return (
       <form className='form-todo' onSubmit={submitForm}>
-         <Input value={value} setValue={setValue}/>
+         <input 
+               className='input-todo' 
+               type='text' 
+               value={value} 
+               onChange={(e) => setValue(e.target.value)}/>
       </form>
    );
 };
