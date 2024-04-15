@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import TodoList from '../TodoList/TodoList';
+import TodoList from '../components/TodoList/TodoList';
 import './App.css';
 
 const App: FC = () => {
