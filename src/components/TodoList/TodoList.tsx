@@ -16,14 +16,10 @@ const TodoList: FC = () => {
 
    const todoNam = todos.length;
 
-   const todoDone = todos.filter((todo) => {
-      if (todo.done) return true;
-   }).length;
+   const todoDone = todos.filter((todo) => todo.done).length;
 
    const deleteTodo = (id: number) => {
-      const newTodos = todos.filter((todo) => {
-         if (id !== todo.id) return true;
-      });
+      const newTodos = todos.filter((todo) => id !== todo.id);
       setTodos(newTodos);
    }
 
