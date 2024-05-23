@@ -1,9 +1,10 @@
-.form-todo {
-   margin-left: 20px;
+.form__input {
+   background-color: rgb(42, 46, 49);
+   color:rgb(255, 235, 255);
+   font-size: 16px;
+   padding: 3px 5px;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.input-todo {
-   border: 2px black solid;
-   height: 25px;
-   width: 293px;
+.form__input:focus {
 }

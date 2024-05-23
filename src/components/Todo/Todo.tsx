@@ -14,17 +14,23 @@ const Todo: FC<TodoProps> = ({todo, deleteTodo, doneTodo, editTodo}) => {
    const [text, setText] = useState<string>(todo.text);
 
    return (
-      <li className='li-todo'>
+      <li className='todo-items__item'>
             {!todo.edit ? <span 
                         onClick={() => doneTodo(todo.id)} 
-                        className={todo.done ? 'span-todo span-todo-done' : 'span-todo'}
+                        className={todo.done ? 'item__text item__text-done' : 'item__text'}
                                        >
-                                 {text} 
+                                 {text} {todo.done ? <i className="fa fa-check"></i> : ''}
                            </span> : 
-                              <input className='input-edit' type='text' value={text} onChange={(e) => setText(e.target.value)}/>
+                           <input className='item__text-edit' type='text' value={text} onChange={(e) => setText(e.target.value)}/>
                            }
-                     <button className='button-todo-edit' onClick={() => editTodo(todo.id)}>edit</button>
-                     <button className='button-todo-delete' onClick={() => deleteTodo(todo.id)}></button>
+                        <div className="item__buttons">
+                           <button className='buttons__edit-btn' onClick={() => editTodo(todo.id)}>
+                              <i className="fa fa-pencil"></i>
+                           </button>
+                           <button className='buttons__delete-btn' onClick={() => deleteTodo(todo.id)}>
+                              <i className="fa fa-times"></i>
+                           </button>
+                        </div>
       </li> 
    );
 };
