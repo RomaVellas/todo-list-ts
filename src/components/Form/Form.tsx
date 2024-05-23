@@ -17,13 +17,13 @@ const Form: FC<FormProps> = ({todos, setTodos}) => {
          setTodos([{id: todos.length + 1, text: value, done: false, edit: false}, ...todos]);
          setValue('');
       }
-      if (value.length < 3 || value.length > 30) alert('Minimum 5 characters');
+      if (value.length < 3 || value.length > 30) alert('Min 3 characters or max 30');
    }
 
    return (
-      <form className='form-todo' onSubmit={submitForm}>
+      <form className='todo-list__form' onSubmit={submitForm}>
          <input 
-               className='input-todo' 
+               className='form__input' 
                type='text' 
                value={value} 
                onChange={(e) => setValue(e.target.value)}/>

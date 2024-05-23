@@ -10,11 +10,11 @@ export interface ITodos {
    edit: boolean;
 }
 
-const TodoList: FC = () => {
+const TodoList = () => {
 
    const [todos, setTodos] = useState<ITodos[]>([]);
 
-   const todoNam = todos.length;
+   const todoNum = todos.length;
 
    const todoDone = todos.filter((todo) => todo.done).length;
 
@@ -32,25 +32,27 @@ const TodoList: FC = () => {
    };
 
    return (
-      <div className='div-todo'>
-         <h1 className='h1-todo'>Todo List</h1>
+      <div className='todo-list'>
+         <h1 className='todo-list__title'>Todo List</h1>
          <Form todos={todos} setTodos={setTodos}/>
-         <ol>
-            {todos.map((todo, index) => {
+         <div className="todo-list__content">
+            <ol className='content__todo-items'>
+               {todos.map((todo) => {
                return   <Todo 
                            todo={todo} 
                            key={todo.id} 
                            deleteTodo={deleteTodo} 
                            doneTodo={doneTodo}
                            editTodo={editTodo}/>  
-            })}
-         </ol>
+               })}
+            </ol>
+            </div>
          {todos.length !== 0 &&  (
-               <div className='div-todo-bottom'>
-                  <div>Todo №: {todoNam}</div>
-                  <button onClick={() => setTodos([])}>Clear List</button>
-                  <div>Done: {todoDone}</div>
-               </div>
+            <div className='todo-list__bottom'>
+               <div className='bottom__todo-count'>Todo: {todoNum}</div>
+               <button className='bottom__clear-btn' onClick={() => setTodos([])}>Clear List</button>
+               <div className='bottom__done-count'>Done: {todoDone}</div>
+            </div>
          )}
       </div>
    );
